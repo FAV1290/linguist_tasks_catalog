@@ -1,0 +1,43 @@
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background: linear-gradient(144deg, #3F468A 24.1%, rgba(147, 136, 173, 0.00) 93.4%);
+	font-family: Manrope;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.main_content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.header_menu {
+	display: flex;
+	width: 100%;
+	height: 10%;
+	align-items: center;
+	background: #5C5C5C;
+	box-shadow: 0px 7px 8px 0px rgba(10%, 10%, 10%, 0.25);
+	color: white;
+	& td {
+		padding: 30px;
+		text-align: center;
+	}
+}

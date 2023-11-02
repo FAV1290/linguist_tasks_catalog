@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+    <div class='main_content'>    
+        <form action='{{ url_for(form.action) }}' method='post'>
+            <div class = form_fields>
+                {% for field in form.list_visible_fields %}
+                    <p>{{ field.label }}<br>{{ field }}</p>
+                {% endfor %}
+                {{ form.hidden_tag() }}
+                <div class='flashes'>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                {{ message }}<br>
+                            {% endfor %}  
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
+            <div class='submit_box'>
+                <p>{{ form.submit }}</p>
+            </div>
+        </form>
+    </div>
+{% endblock %}
