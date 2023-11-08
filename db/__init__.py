@@ -2,7 +2,7 @@ import sqlalchemy
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 
-from webapp.config import DB_HOST
+from db.config import DB_HOST
 
 
 class Base(sqlalchemy.orm.DeclarativeBase):

@@ -6,7 +6,7 @@ input[type=text], input[type=password] {
 }
 
 input[type=submit] {
-	display: flex;
+    display: flex;
 	width: 100%;
 	padding: 20px;
 	justify-content: center;

@@ -5,4 +5,4 @@ import dotenv
 dotenv.load_dotenv(dotenv.find_dotenv())
 
 
-SECRET_KEY = os.environ['TASKCAT_SECRET_KEY']
+DB_HOST = os.environ['TASKCAT_DB_HOST']

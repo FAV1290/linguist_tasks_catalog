@@ -2,7 +2,7 @@
 
 
 {% block body %}
-    <div class='main_content'>    
+    <div class='login_form'>    
         <form action='{{ url_for(form.action) }}' method='post'>
             <div class = form_fields>
                 {% for field in form.list_visible_fields %}
