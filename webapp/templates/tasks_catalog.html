@@ -1,0 +1,27 @@
+{% extends 'base_with_header.html' %}
+
+
+{% block content %}
+	<div class='main_content'>
+		<div class='tasks_table'>
+			<table>
+				<thead>
+					<tr>
+						{% for column_name in table[0].keys() %}
+							<th>{{ column_name }}</th>
+                		{% endfor %}
+					</tr>
+				</thead>
+				<tbody>
+					{% for row in table %}
+						<tr>
+							{% for column in row.values() %}
+								<td>{{ column }}</td>
+							{% endfor %}
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% endblock %}
