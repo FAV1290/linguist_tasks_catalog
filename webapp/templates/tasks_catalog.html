@@ -1,23 +1,38 @@
 {% extends 'base_with_header.html' %}
 
 
+{% block head_addons %}
+	<link rel='stylesheet' href='{{ url_for("static", filename="tasks_catalog.css") }}'>
+{% endblock %}
+
+
 {% block content %}
 	<div class='main_content'>
 		<div class='tasks_table'>
 			<table>
 				<thead>
 					<tr>
-						{% for column_name in table[0].keys() %}
+						{% for column_name in table[0].column_names() %}
 							<th>{{ column_name }}</th>
                 		{% endfor %}
+						<th>Edit/Delete</th>
 					</tr>
 				</thead>
 				<tbody>
 					{% for row in table %}
 						<tr>
-							{% for column in row.values() %}
+							{% for column in row.convert_to_str_tuple %}
 								<td>{{ column }}</td>
 							{% endfor %}
+							<td align="center">
+								<a href='{{ url_for(".edit_task", task_id=row.id) }}'>
+									<img src='{{ url_for("static", filename="edit.png") }}'>
+								</a>
+								<img src='{{ url_for("static", filename="blank.png") }}'>								
+								<a href='{{ url_for(".delete_task", task_id=row.id) }}'>
+									<img src='{{ url_for("static", filename="delete.png") }}'>
+								</a>
+							</td>
 						</tr>
 					{% endfor %}
 				</tbody>

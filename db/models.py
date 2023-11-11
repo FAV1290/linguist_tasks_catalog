@@ -101,6 +101,17 @@ class Task(Base):
         tasks_list = cls.query.filter(cls.owner_id == profile_id).order_by(cls.created_at).all()
         return tasks_list
 
+    @classmethod
+    def validate_owner(
+        cls,
+        task_id: uuid.UUID,
+        profile_id: uuid.UUID
+    ) -> tuple[bool, typing.Self | None]:
+        target_task = cls.query.filter(cls.id == task_id).first()
+        if target_task and target_task.owner_id == profile_id:
+            return True, target_task
+        return False, None
+
 
 if __name__ == '__main__':
     Base.metadata.create_all(bind=Base.engine)

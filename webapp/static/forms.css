@@ -1,40 +1,102 @@
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 10px;
+.login_form_fields {
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    width: 400px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: linear-gradient(0deg, white 0%, white 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
 }
 
-input[type=submit] {
+.login_form_fields {
+    & input[type=text], input[type=password], select {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        font-size: 15px;
+    }
+}
+
+.login_submit_box input[type=submit] {
     display: flex;
-	width: 100%;
-	padding: 20px;
-	justify-content: center;
-	color: white;
-	border-radius: 20px;
-	background: linear-gradient(180deg, #641AAD 0%, rgba(173, 26, 127, 0.00) 100%);
-	border-width: 0px;
-	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-	&:hover {
-		background-color: rgba(255,255,255,0.3);
-	}
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    justify-content: center;
+    color: white;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #641AAD 0%, rgba(173, 26, 127, 0.00) 100%);
+    border-width: 0px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    &:hover {
+        background-color: rgba(255,255,255,0.3);
+    }
 }
 
 .form_fields {
-	box-sizing: border-box;
-	width: 400px;
-	padding-left: 50px;
-	padding-right: 50px;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	background: linear-gradient(0deg, white 0%, white 100%);
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	border-radius: 20px;
+    margin-top: 5%;
+    font-size: 18px;
+    box-sizing: border-box;
+    width: 35%;
+    text-align: left;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: linear-gradient(0deg, white 0%, white 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.form_fields {
+    & input[type=text], select, input[id='datetimepicker'] {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        font-size: 15px;
+    }
+}
+
+.form_fields table {
+    border-spacing: 0px 10px;
+	border-collapse: separate;
+}
+
+span {
+    position: absolute;
+    transform: translate(1000%);
+}
+
+.submit_box input[type=submit], .submit_box button {
+    display: flex;
+    margin-top: 20px;
+    padding: 20px;
+    justify-content: center;
+    color: white;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #641AAD 0%, rgba(173, 26, 127, 0.00) 100%);
+    border-width: 0px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    &:hover {
+        background-color: rgba(255,255,255,0.3);
+    }
+}
+
+.submit_box input[type=submit] {
+    width: 25%; 
+}
+
+.submit_box button {
+    width: 100%;
 }
 
 .flashes {
-	text-align: center;
-	color: #bd0000;
-	font-size: 18px;
-	height: 30px;
+    text-align: center;
+    color: #bd0000;
+    font-size: 18px;
+    height: 30px;
 }

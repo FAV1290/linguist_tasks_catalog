@@ -9,13 +9,13 @@
 		<div style='width: 50%; text-align: center'>
 			<table align='center'>
 				<tr>
-					<td><a>Tasks catalog</a></td>
-					<td><a>Add task</a></td>
-					<td><a>Settings</a></td>
+					<td><a href='{{  url_for(".user_profile")  }}'>Tasks catalog</a></td>
+					<td><a href='{{  url_for(".add_task")  }}'>Add task</a></td>
+					<td><a>Profile</a></td>
 				</tr>
 			</table>
 		</div>
-		<div style='width: 20%; text-align: right; padding-right: 5%'>
+		<div style='width: 30%; text-align: right; padding-right: 5%'>
 			<a href='{{  url_for(".process_logout")  }}'>Log out</a>
 		</div>
 	</div>
