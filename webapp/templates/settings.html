@@ -1,0 +1,105 @@
+{% extends 'base_with_header.html' %}
+
+
+{% block head_addons %}
+	<link rel='stylesheet' href='{{ url_for("static", filename="settings.css") }}'>
+{% endblock %}
+
+
+{% block content %}
+	<div class='main_content'>
+        <table width='100%' cellpadding='20px'>
+            <tr>
+                <td colspan="2">
+                    <div class='settings_table'>
+                        <table>
+                            <thead>
+                                <tr><td colspan='6'>TASK TYPES</td></tr>
+                                <tr>
+                                    {% for column_name in tasktypes_table[0].column_names() %}
+                                        <th>{{ column_name }}</th>
+                                    {% endfor %}
+                                    <th>Edit/Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in tasktypes_table %}
+                                    <tr>
+                                        {% for column in row.convert_to_str_tuple %}
+                                            <td>{{ column }}</td>
+                                        {% endfor %}
+                                        <td width='10%' align='center'>
+                                                <img src='{{ url_for("static", filename="edit.png") }}'>
+                                                <img src='{{ url_for("static", filename="blank.png") }}'>								
+                                                <img src='{{ url_for("static", filename="delete.png") }}'>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%">
+                    <div class='settings_table'>
+                        <table>
+                            <thead>
+                                <tr><td colspan='3'>CLIENTS</td></tr>
+                                <tr>
+                                    {% for column_name in clients_table[0].column_names() %}
+                                        <th>{{ column_name }}</th>
+                                    {% endfor %}
+                                    <th>Edit/Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in clients_table %}
+                                    <tr>
+                                        {% for column in row.convert_to_str_tuple %}
+                                            <td>{{ column }}</td>
+                                        {% endfor %}
+                                        <td width='10%' align='center'>
+                                                <img src='{{ url_for("static", filename="edit.png") }}'>
+                                                <img src='{{ url_for("static", filename="blank.png") }}'>								
+                                                <img src='{{ url_for("static", filename="delete.png") }}'>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+                <td>
+                    <div class='settings_table'>
+                        <table>
+                            <thead>
+                                <tr><td colspan="3">LINGUISTS</td></tr>
+                                <tr>
+                                    {% for column_name in linguists_table[0].column_names() %}
+                                        <th>{{ column_name }}</th>
+                                    {% endfor %}
+                                    <th>Edit/Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in linguists_table %}
+                                    <tr>
+                                        {% for column in row.convert_to_str_tuple %}
+                                            <td>{{ column }}</td>
+                                        {% endfor %}
+                                        <td width='10%' align='center'>
+                                                <img src='{{ url_for("static", filename="edit.png") }}'>
+                                                <img src='{{ url_for("static", filename="blank.png") }}'>								
+                                                <img src='{{ url_for("static", filename="delete.png") }}'>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+	</div>
+{% endblock %}

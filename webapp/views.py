@@ -5,15 +5,21 @@ from flask_login import login_required, login_user, logout_user, current_user
 
 
 from db.models import User, Task
+from webapp.table_fillers import (
+    aggregate_tasks_table_data,
+    aggregate_clients_table_data,
+    aggregate_linguists_table_data,
+    aggregate_tasktypes_table_data,
+)
 from db.converters import create_task_object
 from webapp.forms import LoginForm, AddTaskForm
 from db.changers import add_object, delete_object, update_task
-from webapp.tasks_table_filler import aggregate_profile_table_data
+
 
 
 @login_required
 def user_profile() -> str:
-    tasks_table = aggregate_profile_table_data(current_user.id)
+    tasks_table = aggregate_tasks_table_data(current_user.id)
     return flask.render_template('tasks_catalog.html', title='Your tasks', table=tasks_table)
 
 
@@ -113,3 +119,17 @@ def process_task_edit(task_id: str) -> Response:
         return flask.redirect(flask.url_for('.edit_task', task_id=task_id))
     update_task(current_user.id, uuid.UUID(task_id), flask.request.form)
     return flask.redirect(flask.url_for('.user_profile'))
+
+
+@login_required
+def user_settings() -> str:
+    clients_table = aggregate_clients_table_data(current_user.id)
+    linguists_table = aggregate_linguists_table_data(current_user.id)
+    tasktypes_table = aggregate_tasktypes_table_data(current_user.id)
+    return flask.render_template(
+        'settings.html',
+        title='Your Settings',
+        clients_table=clients_table,
+        linguists_table=linguists_table,
+        tasktypes_table=tasktypes_table,
+    )

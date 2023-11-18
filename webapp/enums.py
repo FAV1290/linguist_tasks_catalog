@@ -7,6 +7,7 @@ class TaskPricingType(Enum):
     custom_only = 'C'
     runtime_and_events = 'RE'
 
+    @property
     def show_label(self) -> str:
         types_to_labels_map = {
             'R': 'Runtimes only pricing',
