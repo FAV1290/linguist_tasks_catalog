@@ -3,8 +3,8 @@
 
 {% block body %}
     <div class='login_form'>    
-        <form action='{{ url_for(form.action) }}' method='post'>
-            <div class = form_fields>
+        <form action='{{ form_action }}' method='post'>
+            <div class = login_form_fields>
                 {% for field in form.list_visible_fields %}
                     <p>{{ field.label }}<br>{{ field }}</p>
                 {% endfor %}
@@ -19,7 +19,7 @@
                     {% endwith %}
                 </div>
             </div>
-            <div class='submit_box'>
+            <div class='login_submit_box'>
                 <p>{{ form.submit }}</p>
             </div>
         </form>

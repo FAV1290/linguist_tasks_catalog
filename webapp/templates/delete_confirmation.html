@@ -1,0 +1,26 @@
+{% extends 'base_with_header.html' %}
+
+
+{% block content %}
+    <div align='center' class='main_content'>    
+        <div class='form_fields'>
+            <p align="center">Are you sure want to delete the task?</p>
+        </div>
+        <div class='submit_box'>
+            <table width='35%' border="0">
+                <tr align="center">
+                    <td>
+                        <a href='{{ url_for(".process_task_delete", task_id=task_id) }}'>
+                            <button class="button_text" type="button">YES</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href='{{ url_for(".user_profile") }}'>
+                            <button type="button">NO</button>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}
