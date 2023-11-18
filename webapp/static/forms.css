@@ -67,6 +67,7 @@
 }
 
 span {
+    display: none;
     position: absolute;
     transform: translate(1000%);
 }
@@ -99,4 +100,13 @@ span {
     color: #bd0000;
     font-size: 18px;
     height: 30px;
+}
+
+
+div[role='calendar'] table {
+    font-size: 15px;
+}
+
+div[role='wrapper'] button {
+    display: none;
 }

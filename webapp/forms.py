@@ -57,7 +57,7 @@ class AddTaskForm(FlaskForm):
         self.deadline_at.data = task.deadline_at
         self.runtime.data = task.runtime
         self.events.data = task.events
-        self.client_id.data = task.client_id
-        self.type_id.data = task.type_id
-        self.linguist_id.data = task.linguist_id
+        self.client_id.data = str(task.client_id)
+        self.type_id.data = str(task.type_id)
+        self.linguist_id.data = str(task.linguist_id)
         self.submit.label.text = 'Edit task'
